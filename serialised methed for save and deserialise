@@ -1,0 +1,29 @@
+@FXML
+    public void save(ActionEvent actionEvent) throws IOException {
+
+        try {
+            FileOutputStream fileOut = new FileOutputStream("D:\\Polygons.data");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(actionEvent);
+            out.close();
+            fileOut.close();
+            //System.out.printf("Serialized data is saved in D:\\Polygons.data");
+        } catch (IOException i) {
+            i.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    public Object deserialise(ActionEvent actionEvent) throws IOException, ClassNotFoundException{
+
+            FileInputStream fileInputStream = new FileInputStream("D:\\Polygons.data");
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+            ObjectInputStream objectInputStream = new ObjectInputStream(bufferedInputStream);
+            Object object = objectInputStream.readObject();
+            objectInputStream.close();
+            return object;
+        }
+        
+        
+        // The deserialised method is a little bit uncertain, I haven't tested it out yet. It returns an object and maybe you can use it to do other functionalites of the app

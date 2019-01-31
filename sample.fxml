@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="New" />
+                        <MenuItem mnemonicParsing="false" onAction="#open" text="Open…" />
+                        <Menu mnemonicParsing="false" text="Open Recent" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false"  onAction="#save" text="Save " />
+                        <MenuItem mnemonicParsing="false" text="Save As…" />
+                        <MenuItem mnemonicParsing="false" onAction="#deserialise" text="Revert" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Preferences…" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Quit" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <BorderPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <top>
+                <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <buttons>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#startProcessing" text="Start" />
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#stopProcessing" text="Stop" />
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#resetBut" text="Reset" />
+                    </buttons>
+                </ButtonBar>
+            </top>
+            <right>
+                <GridPane alignment="CENTER" prefWidth="300.0" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="85.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.0" minWidth="40.0" prefWidth="64.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="40.0" prefWidth="40.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="30.0" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="20.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="30.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="599.0" minHeight="10.0" prefHeight="333.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Slider fx:id="slideOne" blockIncrement="0.02" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <TextField fx:id="fieldOne" onKeyPressed="#enterHandle" prefHeight="26.0" prefWidth="60.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" onAction="#minusOne" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Button mnemonicParsing="false" onAction="#plusOne" text="+" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="288.0" text="amount" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Label alignment="CENTER" prefHeight="16.0" prefWidth="265.0" text="chances for adding a polygon" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
+                        <TextField fx:id="fieldOne1" onKeyPressed="#enterHandle1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Slider fx:id="slideOne1" blockIncrement="1.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#minusOne1" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#plusOne1" text="+" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="229.0" text="chances for deleting the polygon" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="227.0" text="size of polygon" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="6" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="226.0" text="change of color" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="8" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="314.0" text="chance for adding vertex" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="10" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="277.0" text="chance for shifting vertex" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="14" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="274.0" text="Region Of Interest level" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="16" />
+                        <TextField fx:id="fieldOne2" onKeyPressed="#enterHandle2" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="fieldOne3" onKeyPressed="#enterHandle3" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <TextField fx:id="fieldOne4" onKeyPressed="#enterHandle4" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <TextField fx:id="fieldOne5" onKeyPressed="#enterHandle5" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <TextField fx:id="fieldOne7" onKeyPressed="#enterHandle7" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                        <TextField fx:id="fieldOne8" onKeyPressed="#enterHandle8" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#minusOne2" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <Button mnemonicParsing="false" onAction="#plusOne2" text="+" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <Button mnemonicParsing="false" onAction="#minusOne3" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                        <Button mnemonicParsing="false" onAction="#plusOne3" text="+" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                        <Button mnemonicParsing="false" onAction="#minusOne4" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                        <Button mnemonicParsing="false" onAction="#plusOne4" text="+" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                        <Button mnemonicParsing="false" onAction="#minusOne5" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
+                        <Button mnemonicParsing="false" onAction="#plusOne5" text="+" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
+                        <Button mnemonicParsing="false" onAction="#minusOne7" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                        <Button mnemonicParsing="false" onAction="#plusOne7" text="+" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                        <Button mnemonicParsing="false" onAction="#minusOne8" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="17" />
+                        <Button mnemonicParsing="false" onAction="#plusOne8" text="+" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="17" />
+                        <Slider fx:id="slideOne2" blockIncrement="1.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <Slider fx:id="slideOne3" blockIncrement="1.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                        <Slider fx:id="slideOne4" blockIncrement="1.0" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                        <Slider fx:id="slideOne5" blockIncrement="1.0" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+                        <Slider fx:id="slideOne7" blockIncrement="1.0" GridPane.columnIndex="3" GridPane.rowIndex="15" />
+                        <Slider fx:id="slideOne8" blockIncrement="1.0" GridPane.columnIndex="3" GridPane.rowIndex="17" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="361.0" text="chance for deleting vertex" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="12" />
+                        <TextField fx:id="fieldOne6" onKeyPressed="#enterHandle6" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#minusOne6" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="13" />
+                        <Button mnemonicParsing="false" onAction="#plusOne6" text="+" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="13" />
+                        <Slider fx:id="slideOne6" GridPane.columnIndex="3" GridPane.rowIndex="13" />
+                        <Label alignment="CENTER" prefHeight="16.0" prefWidth="241.0" text="Population Size" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="18" GridPane.valignment="CENTER" />
+                        <TextField fx:id="fieldPopSize" onKeyPressed="#enterPopSize" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+                        <TextField fx:id="fieldNumParents" onKeyPressed="#enterNumParents" GridPane.columnIndex="1" GridPane.rowIndex="21" />
+                        <Label alignment="CENTER" prefHeight="16.0" prefWidth="289.0" text="Number of Parents" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="20" />
+                        <Slider fx:id="slidePopSize" max="1000.0" min="10.0" GridPane.columnIndex="3" GridPane.rowIndex="19" />
+                        <Button mnemonicParsing="false" onAction="#minusOnePopSize" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="19" />
+                        <Button mnemonicParsing="false" onAction="#plusOnePopSize" text="+" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="19" />
+                        <Button mnemonicParsing="false" onAction="#plusOneNumParents" text="+" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="21" />
+                        <Button mnemonicParsing="false" onAction="#minusOneNumParents" text="-" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="21" />
+                        <Slider fx:id="slideNumParents" min="1.0" GridPane.columnIndex="3" GridPane.rowIndex="21" />
+                        <!--<Text strokeType="OUTSIDE" strokeWidth="0.0" text="0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" fx:id="valueOne"/>-->
+                    </children>
+                </GridPane>
+            </right>
+            <center>
+                <SplitPane dividerPositions="0.47157190635451507" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <items>
+                        <AnchorPane minHeight="0.0" minWidth="300.0" prefHeight="160.0" prefWidth="300.0">
+                            <children>
+                                <ImageView fx:id="lImage" fitHeight="700.0" fitWidth="310" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="160.0" prefWidth="300.0">
+                            <children>
+                                <ImageView fx:id="rImage" fitHeight="700.0" fitWidth="310.0" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </center>
+        </BorderPane>
+    </children>
+</VBox>

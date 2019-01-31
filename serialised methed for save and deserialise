@@ -27,3 +27,5 @@
         
         
         // The deserialised method is a little bit uncertain, I haven't tested it out yet. It returns an object and maybe you can use it to do other functionalites of the app
+        //Also I add some library on top of the Controller.java so you can check it out
+        // You can modify the save method to store data in a file that's in the same folder as the image
